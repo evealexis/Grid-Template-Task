@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas: 
+    /* row 1 */
+    'nav nav header header header header header'
+    /* row 2 */
+    'nav nav article article article article ads'
+    /* row 3 */
+    'nav nav footer footer footer footer footer';
+    gap: 5px;
+    min-height: 100vh;
+}
+
+header{
+    background-color: gold;
+    grid-area: header;
+}
+
+nav{
+    background-color: green;
+    grid-area: nav;
+}
+
+article{
+    background-color: blueviolet;
+    grid-area: article;
+}
+
+section{
+    background-color: chocolate;
+    grid-area: ads;
+}
+
+footer{
+    background-color: palevioletred;
+    grid-area: footer;
+}
+
+@media (max-width: 600px) {
+    .container {
+        /* grid-template-rows: 50px 1fr 50px */
+        grid-template-rows: 50px 30px minmax(200px, auto) 100px 1fr;
+        /* GTA */
+        grid-template-areas: 
+        'header header header header header header header'
+        'nav nav nav nav nav nav nav'
+        'article article article article article article article'
+        'ads ads ads ads ads ads ads'
+        'footer footer footer footer footer footer footer';
+
+        gap:5px;
+        min-height: 100vh;
+    }
+
+    header{
+        display: grid;
+        grid-row: 1/7;
+        
+    }
+    nav{
+        display: grid;
+        grid-column: 1/7;
+    }
+}
+
+
+/* On tablet screen size, header should take the complete first row.
+Nav and Ads should be in the second row
+
+Content take the complete row
+Footer to take the last complete row
+
+On the smartphone and tablet screen size - each element should be on separate rows */
