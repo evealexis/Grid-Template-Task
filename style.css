@@ -59,16 +59,6 @@ footer{
         gap:5px;
         min-height: 100vh;
     }
-
-    header{
-        display: grid;
-        grid-row: 1/7;
-        
-    }
-    nav{
-        display: grid;
-        grid-column: 1/7;
-    }
 }
 
 
